@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharpShape
 {
-    public class Rectangle : Shape
+    public class Rectangle : Quadrilateral
     {
         private decimal height;
         public decimal Height
@@ -30,11 +30,6 @@ namespace CSharpShape
             }
             this.height = height;
             this.width = width;
-        }
-
-        public override int SidesCount
-        {
-            get { return 4; }
         }
 
         public override decimal Area()

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpShape", "Shape\CSharp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestShape", "UnitTestShape\UnitTestShape.csproj", "{623BBF2F-E709-49A6-9B94-CBD227CDBBBE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrapeShapes", "GrapeShapes\GrapeShapes.csproj", "{B2C16C66-E335-4BF2-BA41-A5721EAD6EEB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{623BBF2F-E709-49A6-9B94-CBD227CDBBBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{623BBF2F-E709-49A6-9B94-CBD227CDBBBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{623BBF2F-E709-49A6-9B94-CBD227CDBBBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2C16C66-E335-4BF2-BA41-A5721EAD6EEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2C16C66-E335-4BF2-BA41-A5721EAD6EEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2C16C66-E335-4BF2-BA41-A5721EAD6EEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2C16C66-E335-4BF2-BA41-A5721EAD6EEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
