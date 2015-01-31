@@ -13,6 +13,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using System.Windows.Threading;
 
 namespace GrapeShapes
 {
@@ -21,10 +22,42 @@ namespace GrapeShapes
     /// </summary>
     public partial class MainWindow : Window
     {
+        private List<Shape> ShapeList = new List<Shape>();
+        private int RedTick = 0;
+        private int BlueTick = 86;
+        private int GreenTick = 172;
         public MainWindow()
         {
             InitializeComponent();
             PopulateClassList();
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Tick += new EventHandler(dipatcherTimer_Tick);
+            timer.Interval = new TimeSpan(0,0,0,0,50);
+            timer.Start();
+        }
+
+        private void dipatcherTimer_Tick(object sender, EventArgs e)
+        {
+            RedTick = RedTick > 254 ? -255 : RedTick + 1;
+            GreenTick = GreenTick > 254 ? -255 : GreenTick + 1;
+            BlueTick = BlueTick > 254 ? -255 : BlueTick + 1;
+            ShapeCanvas.Children.Clear();
+            double tix = DateTime.Now.Ticks;
+            foreach (Square shape in ShapeList)
+            {
+                shape.FillColor = new SolidColorBrush(Color.FromRgb(
+                    (byte)(Math.Abs(RedTick)),
+                    (byte)(Math.Abs(BlueTick)),
+                    (byte)(Math.Abs(GreenTick))
+                ));
+                shape.X = shape.X + shape.Velocity[0];
+                shape.Y = shape.Y + shape.Velocity[1];
+                if ((shape.X + shape.Width) > (decimal)ShapeCanvas.Width || shape.X <= 0)
+                    shape.Velocity[0] = -shape.Velocity[0];
+                if ((shape.Y + shape.Height) > (decimal)ShapeCanvas.Height || shape.Y <= 0)
+                    shape.Velocity[1] = -shape.Velocity[1];
+                shape.DrawOnto( ShapeCanvas, shape.X, shape.Y);
+            }
         }
 
         public static int ArgumentCountFor(string className)
@@ -84,6 +117,7 @@ namespace GrapeShapes
                 InstantiateWithArguments(ClassName, potentialArgs.Take(argCount).ToArray());
             //Draw shape
             shape.DrawOnto(ShapeCanvas, 50, 50);
+            ShapeList.Add(shape);  
         }
 
     }

@@ -177,13 +177,5 @@ namespace UnitTestShape
             Trapezoid trapezoid = new Trapezoid(40, 100, 40);
             Assert.AreEqual(240, trapezoid.Perimeter());
         }
-
-        [TestMethod]
-        public void TestDefaultColors()
-        {
-            Trapezoid shape = new Trapezoid(10, 15, 20);
-            Assert.AreEqual(System.Drawing.Color.Bisque, shape.FillColor);
-            Assert.AreEqual(System.Drawing.Color.Tomato, shape.BorderColor);
-        }
     }
 }

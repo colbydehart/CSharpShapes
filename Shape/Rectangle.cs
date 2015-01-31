@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Media;
+using System.Windows.Media;
+using System.Windows;
+using System.Windows.Shapes;
 
 namespace CSharpShape
 {
@@ -22,7 +26,7 @@ namespace CSharpShape
             set { width = value; }
         }
 
-        public Rectangle(decimal width, decimal height)
+        public Rectangle(int width, int height)
         {
             if (height <= 0 || width <= 0)
             {
@@ -50,5 +54,24 @@ namespace CSharpShape
             width = width * percent / 100;
         }
 
+        public override void DrawOnto(System.Windows.Controls.Canvas canvas, int x, int y)
+        {
+            PointCollection points = new PointCollection() {
+                new Point(x, y),
+                new Point((double)(x+width), y),
+                new Point((double)(x+width), (double)(y+height)),
+                new Point(x, (double)(y+height))
+            };
+
+            Polygon myRect = new Polygon();
+            myRect.Points = points;
+            myRect.Fill = FillColor;
+            myRect.Stroke = BorderColor;
+            myRect.VerticalAlignment = VerticalAlignment.Center;
+            myRect.HorizontalAlignment = HorizontalAlignment.Left;
+            myRect.StrokeThickness = 2;
+
+            canvas.Children.Add(myRect);
+        }
     }
 }

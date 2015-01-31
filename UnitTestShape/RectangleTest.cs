@@ -140,12 +140,5 @@ namespace UnitTestShape
             Assert.AreEqual(220, rectangle.Perimeter());
         }
 
-        [TestMethod]
-        public void TestDefaultColors()
-        {
-            Rectangle shape = new Rectangle(10, 15);
-            Assert.AreEqual(System.Drawing.Color.Bisque, shape.FillColor);
-            Assert.AreEqual(System.Drawing.Color.Tomato, shape.BorderColor);
-        }
     }
 }
