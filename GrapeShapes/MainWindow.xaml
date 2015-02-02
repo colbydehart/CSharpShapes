@@ -8,10 +8,11 @@
                 <ComboBox HorizontalAlignment="Left" VerticalAlignment="Top" x:Name="ShapeType" SelectionChanged="ShapeType_SelectionChanged" Margin="10,10,10,0" Width="100" />
                 <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="100" Margin="10" x:Name="Argument1"/>
                 <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Width="100" Text="1" VerticalAlignment="Top" Margin="10" x:Name="Argument2"/>
-                <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Margin="10" Width="100" Text="1" VerticalAlignment="Top" x:Name="Argument3"/>
-                <Button Content="Create" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,10,0" Height="18" Width="69" Click="Button_Click"/>
+                <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Margin="10,10,10,0" Width="100" Text="1" VerticalAlignment="Top" x:Name="Argument3"/>
+                <Button Content="Create" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,10,0" Height="18" Width="69" Click="Button_Click" />
             </StackPanel>
-            <Canvas HorizontalAlignment="Left" Height="423" VerticalAlignment="Top" Width="547" Background="#FFF6F6F6" Margin="10,0,0,0" Name="ShapeCanvas"/>
+            <Canvas HorizontalAlignment="Left" Height="423" VerticalAlignment="Top" Width="547" Background="#FFF6F6F6" Margin="10,0,0,0" Name="ShapeCanvas" RenderTransformOrigin="0,0">
+            </Canvas>
         </StackPanel>
     </Grid>
 </Window>
